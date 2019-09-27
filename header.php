@@ -10,7 +10,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/stylesheet.css">
+    <link rel="stylesheet" href="css/stylesheet.css">
 </head>
 
 <body>
@@ -19,51 +19,92 @@
         <nav class=" navbar-expand-lg navbar-dark bg-dark container-fluid">
             <div class="row">
                 <div class="col-3">
+                    <!-- LOGO -->
                     <a class="navbar-brand" href="#"><img class="logo" src="media/logo/logo-5.svg" alt="" width="128" height="70"></a>
-
+                    <!-- Dropdown Rayons -->
                     <button type="button" class="btn btn-outline-success dropdown-toggle" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">Rayons</button>
 
                 </div>
 
                 <div class="col-6 justify-content-center collapse navbar-collapse" id="navbarSupportedContent">
 
-
+                    <!-- Div searchbox -->
                     <div class="input-group mb-3">
+
                         <input type="text" class="form-control" placeholder="Rechercher..." aria-label="Recipient's username" aria-describedby="basic-addon2">
                         <div class="input-group-append">
                             <button class="btn btn-outline-secondary" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
                         </div>
                     </div>
 
-                    <!-- <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                        
-                    </form> -->
                 </div>
-                <div class="col-3 nav justify-content-end">
-                    <span style="color:white;"><i class="fa fa-shopping-basket fa-3x" aria-hidden="true"></i></span>
-                    <span style="color:white;"><i class="fa fa-user-circle fa-3x" aria-hidden="true"></i></span>
+                <!-- Div icons -->
+                <div class="col-3 nav icons justify-content-center">
+                    <!-- icone panier -->
+                    <span class="icon"><i style="color:white;" class="fa fa-shopping-basket fa-3x" aria-hidden="true"></i></span>
+                    <!-- icone favoris avec popover -->
+                    <span class="icon">
+                        <button id="popoverfav" type="button" class="btn " data-container="body" data-toggle="popover" data-placement="bottom" data-html="true">
+                            
+                            <i style="color:#f263ce;" class="fa fa-heart fa-3x" aria-hidden="true"></i>
+                            <!-- FAV POPOVER CONTENT -->
+                            <div id="favpopover-content" hidden>
+                                <div>
+                                    <p>HELLO THERE</p>
+                                    <form>
+                                    <span><input class='btn' type='submit' value='MICHEL'></span>
+                                    <input type='text'>
+                                    </form>
+                                </div>
+                                <div>
+                                    <p>GENERAL KENOBI</p>
+                                </div>
+                            </div>
+                        </button>
+                    </span>
+                    <!-- icone profil -->
+                    <span class="icon"><i style="color:white;" class="fa fa-user-circle fa-3x" aria-hidden="true"></i></span>
                 </div>
             </div>
         </nav>
+        <!-- Menu déroulant rayons -->
+        <div class="pos-f-t" id="menuRayons">
+            <div class="collapse" id="navbarToggleExternalContent">
+                <div class="bg-dark">
+                    <div class="rayons">
+                        <p>Rayon 1</p>
+                    </div>
+                    <div class="rayons">
+                        <p>Rayon 1</p>
+                    </div>
+                    <div class="rayons">
+                        <p>Rayon 1</p>
+                    </div>
+                    <div class="rayons">
+                        <p>Rayon 1</p>
+                    </div>
+                    <div class="rayons">
+                        <p>Rayon 1</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
     </header>
+
 
     <div class="container-fluid">
 
         <div class="row">
 
-            <div class="pos-f-t col-2 sticky-top" id="menuRayons">
-                <div class="collapse" id="navbarToggleExternalContent">
-                    <div class="bg-dark p-4">
-                        <h5 class="text-white h4">Collapsed content</h5>
-                        <span class="text-muted">Toggleable via the navbar brand.</span>
-                    </div>
-                </div>
-            </div>
 
 
-            <div class="content col-8">
+
+            <div class="content col-8 justify-content-center">
                 <p>
                     <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt dolore libero dolorum error sint fugit dolor porro quaerat ad iste? Eveniet laborum voluptatem eos dolorum sapiente, natus laboriosam fugiat cum.</span>
                     <span>Blanditiis recusandae sapiente beatae fugit commodi dolorem officiis eaque dicta ipsa porro assumenda rem vero accusantium quia laudantium, voluptates, perferendis maxime quo autem officia? Sint sunt officiis temporibus eveniet vel!</span>
@@ -144,11 +185,21 @@
             </div>
         </div>
     </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- <script>
+        $("[data-toggle=popover]").popover({
+            html: true,
+            content: function() {
+                return $('#favpopover-content').html();
+            }
+        });
+    </script> -->
+    <script src="popover.js"></script>
 </body>
 
 </html>
