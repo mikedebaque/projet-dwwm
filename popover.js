@@ -1,7 +1,18 @@
-$("[data-toggle=popover]").popover({
+$("#popoverfav").popover({
     html: true,
     sanitize: false,
     content: function () {
         return $('#favpopover-content').html();
     }
+});
+$("#popoverprofil").popover({
+    html: true,
+    sanitize: false,
+    content: function () {
+        return $('#profilpopover-content').html();
+    }
+});
+/* Ferme popover si un est déjà ouvert */
+$('.btn').on('click', function (e) {
+    $('.btn').not(this).popover('hide');
 });

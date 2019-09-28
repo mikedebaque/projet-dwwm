@@ -19,7 +19,17 @@
 }
 .popover{
     background-color: #343a40;
+    width: 100%;
+    min-width: 25%;
+    min-height: 25%;
 }
 .popover-body{
     color: white;
+}
+/* Change color arrow popover */
+.bs-popover-auto[x-placement^="bottom"] > .arrow::after, .bs-popover-bottom > .arrow::after {
+    border-bottom-color: #343a40;
+}
+hr {
+	border-top: 1px solid rgba(0,0,0,1);
 }

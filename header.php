@@ -18,15 +18,17 @@
     <header class="sticky-top">
         <nav class=" navbar-expand-lg navbar-dark bg-dark container-fluid">
             <div class="row">
-                <div class="col-3">
+                <div class="col-1">
                     <!-- LOGO -->
                     <a class="navbar-brand" href="#"><img class="logo" src="media/logo/logo-5.svg" alt="" width="128" height="70"></a>
                     <!-- Dropdown Rayons -->
-                    <button type="button" class="btn btn-outline-success dropdown-toggle" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">Rayons</button>
 
                 </div>
+                <div class="col-1">
+                    <button type="button" class="btn btn-outline-success dropdown-toggle" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">Rayons</button>
+                </div>
 
-                <div class="col-6 justify-content-center collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="col-md-1 col-lg-6 justify-content-center collapse navbar-collapse" id="navbarSupportedContent">
 
                     <!-- Div searchbox -->
                     <div class="input-group mb-3">
@@ -39,32 +41,33 @@
 
                 </div>
                 <!-- Div icons -->
-                <div class="col-3 nav icons justify-content-center">
-                    <!-- icone panier -->
-                    <span class="icon"><i style="color:white;" class="fa fa-shopping-basket fa-3x" aria-hidden="true"></i></span>
-                    <!-- icone favoris avec popover -->
-                    <span class="icon">
-                        <button id="popoverfav" type="button" class="btn " data-container="body" data-toggle="popover" data-placement="bottom" data-html="true">
-                            
-                            <i style="color:#f263ce;" class="fa fa-heart fa-3x" aria-hidden="true"></i>
-                            <!-- FAV POPOVER CONTENT -->
-                            <div id="favpopover-content" hidden>
-                                <div>
-                                    <p>HELLO THERE</p>
-                                    <form>
-                                    <span><input class='btn' type='submit' value='MICHEL'></span>
-                                    <input type='text'>
-                                    </form>
-                                </div>
-                                <div>
-                                    <p>GENERAL KENOBI</p>
-                                </div>
-                            </div>
-                        </button>
-                    </span>
-                    <!-- icone profil -->
-                    <span class="icon"><i style="color:white;" class="fa fa-user-circle fa-3x" aria-hidden="true"></i></span>
+                <div class="col nav icons justify-content-end">
+                    <!-- <div class="col-1 nav icons"> -->
+                        <!-- icone panier -->
+                        <span class="icon">
+                            <button class="btn">
+                                <i style="color:white;" class="fa fa-shopping-basket fa-3x" aria-hidden="true"></i>
+                            </button>
+                        </span>
+                    <!-- </div> -->
+                    <!-- <div class="col-1 nav icons"> -->
+                        <!-- icone favoris avec popover -->
+                        <span class="icon">
+                            <button id="popoverfav" type="button" class="btn" data-container="body" data-toggle="popover" data-placement="bottom" data-html="true">
+                                <i style="color:#f263ce;" class="fa fa-heart fa-3x" aria-hidden="true"></i>
+                            </button>
+                        </span>
+                    <!-- </div> -->
+                    <!-- <div class="col-1 nav icons"> -->
+                        <!-- icone profil -->
+                        <span class="icon">
+                            <button id="popoverprofil" type="button" class="btn" data-container="body" data-toggle="popover" data-placement="bottom" data-html="true">
+                                <i style="color:white;" class="fa fa-user-circle fa-3x" aria-hidden="true"></i>
+                            </button>
+                        </span>
+                    <!-- </div> -->
                 </div>
+
             </div>
         </nav>
         <!-- Menu déroulant rayons -->
@@ -91,7 +94,38 @@
         </div>
 
 
-
+        <!-- FAV POPOVER CONTENT -->
+        <div id="favpopover-content" hidden>
+            <div>
+                <p>Vous devez être connecté pour utiliser les favoris.</p>
+                <input class="btn btn-success" type="submit" value="Je me connecte">
+            </div>
+        </div>
+        <!-- PROFIL POPOVER CONTENT -->
+        <div id="profilpopover-content" hidden>
+            <div>
+                <form action="">
+                    <div class="form-group">
+                        <input class="form-control" type="email" name="" required>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="password" name="" id="" required>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input">
+                        <label class="form-check-label">Se souvenir de moi</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="btn btn-success" type="submit" value="Je me connecte">
+                    </div>
+                </form>
+                <hr>
+                <div>
+                    <p>Vous n'avez pas de compte ?</p>
+                    <input class="btn btn-success" type="submit" value="Créer mon compte">
+                </div>
+            </div>
+        </div>
 
 
     </header>
