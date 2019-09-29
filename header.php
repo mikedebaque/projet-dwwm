@@ -18,56 +18,46 @@
     <header class="sticky-top">
         <nav class=" navbar-expand-lg navbar-dark bg-dark container-fluid">
             <div class="row">
-                <div class="col-1">
-                    <!-- LOGO -->
-                    <a class="navbar-brand" href="#"><img class="logo" src="media/logo/logo-5.svg" alt="" width="128" height="70"></a>
-                    <!-- Dropdown Rayons -->
-
+                <!-- LOGO et Dropdown Rayons -->
+                <div class="col-sm-12 col-md-12 col-lg-4 nav justify-content-around">
+                    <a class="navbar-brand" href="#"><img class="logo img-fluid" src="media/logo/logo-5.svg" alt="" width="128" height="60"></a>
+                    <span class="pt-3"><button type="button" class="h-50 btn btn-outline-success dropdown-toggle" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">Rayons</button></span>
                 </div>
-                <div class="col-1">
-                    <button type="button" class="btn btn-outline-success dropdown-toggle" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">Rayons</button>
-                </div>
-
-                <div class="col-md-1 col-lg-6 justify-content-center collapse navbar-collapse" id="navbarSupportedContent">
-
-                    <!-- Div searchbox -->
-                    <div class="input-group mb-3">
-
-                        <input type="text" class="form-control" placeholder="Rechercher..." aria-label="Recipient's username" aria-describedby="basic-addon2">
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-secondary" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+                <!-- Div searchbox -->
+                <div class='col-xs-12 col-sm-12 col-md-12 col-lg-4 pt-3'>
+                    <form class='navbar-form'>
+                        <div class='input-group'>
+                            <input class='form-control' type='text' name='search' placeholder='Rechercher...' />
+                            <span class="input-group-btn">
+                                <button type='submit' class='btn btn-outline-secondary'>
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </button>
+                            </span>
                         </div>
-                    </div>
-
+                    </form>
                 </div>
                 <!-- Div icons -->
-                <div class="col nav icons justify-content-end">
-                    <!-- <div class="col-1 nav icons"> -->
-                        <!-- icone panier -->
-                        <span class="icon">
-                            <button class="btn">
-                                <i style="color:white;" class="fa fa-shopping-basket fa-3x" aria-hidden="true"></i>
-                            </button>
-                        </span>
-                    <!-- </div> -->
-                    <!-- <div class="col-1 nav icons"> -->
-                        <!-- icone favoris avec popover -->
-                        <span class="icon">
-                            <button id="popoverfav" type="button" class="btn" data-container="body" data-toggle="popover" data-placement="bottom" data-html="true">
-                                <i style="color:#f263ce;" class="fa fa-heart fa-3x" aria-hidden="true"></i>
-                            </button>
-                        </span>
-                    <!-- </div> -->
-                    <!-- <div class="col-1 nav icons"> -->
-                        <!-- icone profil -->
-                        <span class="icon">
-                            <button id="popoverprofil" type="button" class="btn" data-container="body" data-toggle="popover" data-placement="bottom" data-html="true">
-                                <i style="color:white;" class="fa fa-user-circle fa-3x" aria-hidden="true"></i>
-                            </button>
-                        </span>
-                    <!-- </div> -->
+                <div class="col-md-12 col-sm-12 col-lg-4 nav pt-2 justify-content-around">
+                    <!-- icone panier -->
+                    <span class="icon">
+                        <button class="btn">
+                            <i style="color:white;" class="fa fa-shopping-basket fa-3x" aria-hidden="true"></i>
+                            <!-- <i style="color:white;" class="fa fa-shopping-basket fa-2x" aria-hidden="true"></i> -->
+                        </button>
+                    </span>
+                    <!-- icone favoris avec popover -->
+                    <span class="icon">
+                        <button id="popoverfav" type="button" class="btn" data-container="body" data-toggle="popover" data-placement="bottom" data-html="true">
+                            <i style="color:#f263ce;" class="fa fa-heart fa-3x" aria-hidden="true"></i>
+                        </button>
+                    </span>
+                    <!-- icone profil -->
+                    <span class="icon">
+                        <button id="popoverprofil" type="button" class="btn" data-container="body" data-toggle="popover" data-placement="bottom" data-html="true">
+                            <i style="color:white;" class="fa fa-user-circle fa-3x" aria-hidden="true"></i>
+                        </button>
+                    </span>
                 </div>
-
             </div>
         </nav>
         <!-- Menu déroulant rayons -->
@@ -104,6 +94,7 @@
         <!-- PROFIL POPOVER CONTENT -->
         <div id="profilpopover-content" hidden>
             <div>
+                <p>Je me connecte :</p>
                 <form action="">
                     <div class="form-group">
                         <input class="form-control" type="email" name="" required>
@@ -225,14 +216,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <!-- <script>
-        $("[data-toggle=popover]").popover({
-            html: true,
-            content: function() {
-                return $('#favpopover-content').html();
-            }
-        });
-    </script> -->
     <script src="popover.js"></script>
 </body>
 
