@@ -1,0 +1,13 @@
+body,html {
+    height: 100%;
+}
+
+.top-navbar{
+    background-color: grey;
+    border-bottom: 1px solid black;
+}
+
+.sideNav{
+    background-color: grey;
+    height: calc(100vh - 87px);
+}
