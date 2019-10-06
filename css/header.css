@@ -1,17 +1,17 @@
-#menuRayons{
+.menuRayons{
     position: absolute;
     left:0%;
     z-index: 99;
-    height: 100vh;
+    /* height: 100vh; */
     width: 25%;
 }
 @media (max-width:1024px) {
 
-    #menuRayons{
+    .menuRayons{
         position: absolute;
         left:0%;
         z-index: 99;
-        height: 100vh;
+        /* height: 100vh; */
         width: 50%;
     }
   
