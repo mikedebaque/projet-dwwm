@@ -1,0 +1,41 @@
+body {
+   
+    background-color:rgb(220,220,220);
+    color:#048;      
+    font-size: 14px;
+    line-height: 16px;
+    font-size: helvetica;
+  }
+
+  .container-fluid
+  {
+    
+      padding-top: 20px;
+    margin-right: auto;} 
+
+    #menu
+    {
+        position: absolute;
+     float:right;
+      right:30px;
+      bottom:30px;
+
+    }    
+  h4 {
+    text-shadow: 4px 4px 4px #777;
+    text-align: center;
+    color: #449;
+    margin-bottom:  auto;
+    float:auto;
+  }
+ 
+  section { 
+     
+    padding-right: 0 ; 
+  }
+  div {
+    
+    border-radius: 8px;
+    padding: 0 ;
+    
+  }
