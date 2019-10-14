@@ -31,7 +31,7 @@
                 <!-- icone favoris avec popover -->
                 <span class="icon">
                     <button id="popoverfav" type="button" class="btn" data-container="body" data-toggle="popover" data-placement="bottom" data-html="true">
-                        <i style="color:#f263ce;" class="fa fa-heart fa-3x" aria-hidden="true"></i>
+                        <i style="color:white;" class="fa fa-heart fa-3x" aria-hidden="true"></i>
                     </button>
                 </span>
                 <!-- icone profil -->

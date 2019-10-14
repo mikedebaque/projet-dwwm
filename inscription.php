@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Title</title>
+    <title>Inscription</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,7 +21,7 @@
             <form action="" method="post">
             <h1>Inscription</h1>
                 <!-- Radio genre -->
-                <div>
+                <div class="col-12">
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="sexeInscription" id="femmeInscription" value="femme" checked>
                         <label class="form-check-label" for="femmeInscription">
