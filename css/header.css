@@ -1,25 +1,5 @@
-.menuRayons{
-    position: absolute;
-    left:0%;
-    z-index: 99;
-    /* height: 100vh; */
-    width: 25%;
-}
-@media (max-width:1024px) {
-
-    .menuRayons{
-        position: absolute;
-        left:0%;
-        z-index: 99;
-        /* height: 100vh; */
-        width: 50%;
-    }
-  
-  }
-
-.rayons{
+.popover-body{
     color: white;
-    border-bottom: 1px solid black;
 }
 .popover{
     background-color: #343a40;
@@ -27,13 +7,54 @@
     min-width: 25%;
     min-height: 25%;
 }
-.popover-body{
-    color: white;
-}
-/* Change color arrow popover */
+/* Change couleur flèche popover */
 .bs-popover-auto[x-placement^="bottom"] > .arrow::after, .bs-popover-bottom > .arrow::after {
     border-bottom-color: #343a40;
 }
 hr {
 	border-top: 1px solid rgba(0,0,0,1);
 }
+
+/* CSS SIDEBAR BURGER */
+  .sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #343a40;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidebar a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  .openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    /* background-color: #111; */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+  }

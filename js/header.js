@@ -16,3 +16,13 @@ $("#popoverprofil").popover({
 $('.btn').on('click', function (e) {
     $('.btn').not(this).popover('hide');
 });
+
+function openNav() {
+    document.getElementById("mySidebar").style.width = "80%";
+    document.getElementById("main").style.marginLeft = "250px";
+  }
+  
+  function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+  }
