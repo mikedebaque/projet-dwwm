@@ -15,7 +15,7 @@
 <body>
     
 
-    <main class="containter-fluid">
+    <main class="container-fluid">
         <div class="row justify-content-center mr-0">
             <form action="" method="post">
             <h1>Inscription</h1>
@@ -67,12 +67,12 @@
                 </div>
                 <!-- Mot de passe -->
                 <div class="form-row">
-                    <div class="form-group col-6">
+                    <div class="form-group col-sm-12 col-md-6">
                         <label for="pcwInscription">Mot de passe :</label>
                         <input type="password" class="form-control" id="pcwInscription" required>
                         <small class="text-muted">Votre mot de passe doit être composé d'au moins une majuscule, un chiffre et un caractère spécial.</small>
                     </div>
-                    <div class="form-group col-6">
+                    <div class="form-group col-sm-12 col-md-6">
                         <label for="confirmpcwInscription">Confirmez votre mot de passe :</label>
                         <input type="password" class="form-control" id="confirmpcwInscription" required>
                     </div>
