@@ -13,14 +13,12 @@
 </head>
 
 <body>
-    
-
     <main class="container-fluid">
-        <div class="row justify-content-center mr-0">
+        <div class="row justify-content-center mr-0" style="background-color:#F1F3F5;">
             <form action="" method="post">
-            <h1>Inscription</h1>
+            <h1 class="d-flex justify-content-center">Inscription</h1>
                 <!-- Radio genre -->
-                <div class="col-12">
+                <div class="col-12 d-flex justify-content-around">
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="sexeInscription" id="femmeInscription" value="femme" checked>
                         <label class="form-check-label" for="femmeInscription">
@@ -98,14 +96,14 @@
                     <label for="adresseInscription">Telephone :</label>
                     <input type="tel" class="form-control" id="adresseInscription" placeholder="Telephone">
                 </div>
+                <!-- Boutons -->
+
                 <div class="form-row">
-                        <div class="col-6">
+                        <div class="col-12 d-flex justify-content-around">
                         <input type="reset" class="btn btn-outline-danger btn-lg" value="Annuler">
-                        </div>
-                        <div class="col-6">
                         <input type="submit" class="btn btn-outline-success btn-lg" value="Envoyer">
                         </div>
-                    </div> 
+                </div> 
                 <!-- <input type="submit" class="btn btn-primary" value="Envoyer"> -->
             </form>
         </div>
