@@ -15,7 +15,7 @@
 <body>
     <main class="container-fluid">
         <div class="row justify-content-center mr-0" style="background-color:#F1F3F5;">
-            <form action="" method="post">
+            <form action="back\Traitement\traitementInscription.php" method="POST">
             <h1 class="d-flex justify-content-center">Inscription</h1>
                 <!-- Radio genre -->
                 <div class="col-12 d-flex justify-content-around">
@@ -42,59 +42,59 @@
                 <div>
                     <div class="form-group">
                         <label for="nomInscription">Nom :</label>
-                        <input type="text" class="form-control" id="nomInscription" placeholder="Nom" required>
+                        <input type="text" class="form-control" id="nomInscription" name="nomInscription" placeholder="Nom" required>
                     </div>
                     <div class="form-group">
                         <label for="prenomInscription">Prénom :</label>
-                        <input type="text" class="form-control" id="prenomInscription" placeholder="Prénom" required>
+                        <input type="text" class="form-control" id="prenomInscription" name="prenomInscription" placeholder="Prénom" required>
                     </div>
                 </div>
                 <!-- Date de naissance -->
                 <div>
                     <div class="form-group">
                         <label for="naissanceInscription">Date de naissance :</label>
-                        <input type="date" class="form-control" id="naissanceInscription" required>
+                        <input type="date" class="form-control" id="naissanceInscription" name="naissanceInscription" required>
                     </div>
                 </div>
                 <!-- Adresse email -->
                 <div>
                     <div class="form-group">
                         <label for="emailInscription">Adresse e-mail :</label>
-                        <input type="email" class="form-control" id="emailInscription" placeholder="adresse@email.com" required>
+                        <input type="email" class="form-control" id="emailInscription" name="emailInscription" placeholder="adresse@email.com" required>
                     </div>
                 </div>
                 <!-- Mot de passe -->
                 <div class="form-row">
                     <div class="form-group col-sm-12 col-md-6">
                         <label for="pcwInscription">Mot de passe :</label>
-                        <input type="password" class="form-control" id="pcwInscription" required>
+                        <input type="password" class="form-control" id="pcwInscription" name="pcwInscription" required>
                         <small class="text-muted">Votre mot de passe doit être composé d'au moins une majuscule, un chiffre et un caractère spécial.</small>
                     </div>
                     <div class="form-group col-sm-12 col-md-6">
                         <label for="confirmpcwInscription">Confirmez votre mot de passe :</label>
-                        <input type="password" class="form-control" id="confirmpcwInscription" required>
+                        <input type="password" class="form-control" id="confirmpcwInscription" name="confirmpcwInscription" required>
                     </div>
                 </div>
                 <!-- Adresse -->
                 <div>
                     <div class="form-group">
                         <label for="adresseInscription">Adresse :</label>
-                        <input type="text" class="form-control" id="adresseInscription" placeholder="Votre adresse" required>
+                        <input type="text" class="form-control" id="adresseInscription" name="adresseInscription" placeholder="Votre adresse" required>
                     </div>
                     <!-- CP et ville -->
                     <div class="form-row">
                         <div class="form-group col-6">
-                            <input type="text" class="form-control" id="adresseInscription" placeholder="Code postale" required>
+                            <input type="text" class="form-control" id="cpInscription" name="cpInscription" placeholder="Code postale" required>
                         </div>
                         <div class="form-group col-6">
-                            <input type="text" class="form-control" id="adresseInscription" placeholder="Ville" required>
+                            <input type="text" class="form-control" id="villeInscription" name="villeInscription" placeholder="Ville" required>
                         </div>
                     </div>
                 </div>
                 <!-- Telephone -->
                 <div class="form-group">
                     <label for="adresseInscription">Telephone :</label>
-                    <input type="tel" class="form-control" id="adresseInscription" placeholder="Telephone">
+                    <input type="tel" class="form-control" id="telInscription" name="telInscription" placeholder="Telephone">
                 </div>
                 <!-- Boutons -->
 
