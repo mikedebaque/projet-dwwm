@@ -20,10 +20,10 @@ if((isset($_POST['nomInscription']) and !empty($_POST['nomInscription']))and
     $confirmPcw = $_POST['confirmpcwInscription'];
     $adresse = $_POST['adresseInscription'];
     $cp = $_POST['cpInscription'];
-    $ville = $_POST['villeInscription'];
+    $ville = ucfirst(strtolower($_POST['villeInscription']));
     $date = $_POST['naissanceInscription'];
     $tel = $_POST['telInscription'];
-    if($pcw == $confirmPcw)
+    if(($pcw == $confirmPcw) and (filter_var($email,FILTER_VALIDATE_EMAIL)!=false))
     {
         $hashedPcw = password_hash($pcw,PASSWORD_DEFAULT);
         $villeDAO = new villeDAO();

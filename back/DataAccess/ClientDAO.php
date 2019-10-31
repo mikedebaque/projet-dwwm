@@ -35,4 +35,20 @@ class ClientDAO extends AbstractDAO
         $this->queryDB($stmt);
         $db->close();
     }
+    public function isClientExist($email)
+    {
+        $req = "SELECT * FROM client where Email_Client = ?";
+        $db = $this->connexionDB();
+        $stmt = $db->prepare($req);
+        $stmt->bind_param('s',$email);
+        $data = $this->fetchDB($stmt);
+        if(empty($data))
+        {
+            return false;
+        }
+        else
+        {
+            return $data;
+        }
+    }
 }

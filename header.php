@@ -112,10 +112,10 @@
                 <p>Je me connecte :</p>
                 <form action="">
                     <div class="form-group">
-                        <input class="form-control" type="email" name="" required>
+                        <input class="form-control" type="email" name="email" required>
                     </div>
                     <div class="form-group">
-                        <input class="form-control" type="password" name="" id="" required>
+                        <input class="form-control" type="password" name="pcw" id="" required>
                     </div>
                     <div class="form-check">
                         <input type="checkbox" class="form-check-input">
