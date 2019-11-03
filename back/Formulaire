@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+
+<div class="container-fluid">
+
+    <nav class="nav nav-pills nav-justified  flex-column flex-sm-row navbar navbar-expand-lg navbar sticky-top navbar-light bg-light">
+        <a class=" flex-sm-fill text-sm-center nav-item nav-link active btn btn-info " data-toggle="pill" href="FormulaireFournisseurs.php">FOURNISSEURS</a>
+    </nav>
+
+    <body>
+        <?php
+        include_once 'FournisseursDataAccess.php';
+        $FournisseurForm = new FournisseursDataAccess;
+
+        if (isset($_GET['id_fournisseur'])) {
+            $objetFournisseur = $FournisseurForm->trouverFournisseurParNumero($_GET['id_fournisseur']);
+            $todo = 'modif';
+        } else {
+            $objetFournisseur = 0;
+            $todo = 'ajout';
+        }
+
+
+        function formulaire($objetFournisseur, $rs)
+        {
+            if (isset($_GET['id_fournisseur'])) {
+                switch ($rs) {
+                    case 'id_fournisseur':
+                        echo "value='" . $objetFournisseur->getId_fournisseur() . "'";
+                        break;
+                    case 'nom_entreprise_fournisseur':
+                        echo "value='" . $objetFournisseur->getNom_entreprise_fournisseur() . "'";
+                        break;
+                    case 'adresse_fournisseur':
+                        echo "value='" . $objetFournisseur->getAdresse_fournisseur() . "'";
+                        break;
+                    case 'email_fournisseur':
+                        echo "value='" . $objetFournisseur->getEmail_fournisseur() . "'";
+                        break;
+                    case 'tel_port_fournisseur':
+                        echo "value='" . $objetFournisseur->getTel_port_fournisseur() . "'";
+                        break;
+                    case 'tel_fixe_fournisseur':
+                        echo "value='" . $objetFournisseur->getTel_fixe_fournisseur() . "'";
+                        break;
+                    case 'id_ville':
+                        echo "value='" . $objetFournisseur->getId_ville() . "'";
+                        break;
+                }
+            }
+        }
+
+        ?>
+
+            <form name="Gestion des Fournisseurs" method="POST" action="TraitementFournisseurs.php?todo=<?php echo $todo?>">
+
+                <label for="id_fournisseur"> N°Fournisseur :</label>
+                <input class="form-control" name="id_fournisseur" type="number" placeholder="" <?php formulaire($objetFournisseur, "id_fournisseur") ?>><br />
+                <br />
+
+                <label for="nom_entreprise_fournisseur"> Nom :</label>
+                <input class="form-control" name="nom_entreprise_fournisseur" type="text" placeholder="Entrez Nom" <?php formulaire($objetFournisseur, "nom_fournisseur") ?>><br />
+                <br />
+
+                <label for="adresse_fournisseur"> Adresse :</label>
+                <input class="form-control" name="adresse_fournisseur" type="text" placeholder="Entrez Adresse" <?php formulaire($objetFournisseur, "adresse_fournisseur") ?>><br />
+                <br />
+
+                <label for="email_fournisseur"> Email :</label>
+                <input class="form-control" name="email_fournisseur" type="text" placeholder="Entrez votre mail" <?php formulaire($objetFournisseur, "email_fournisseur") ?>><br />
+                <br />
+
+                <label for="tel_port_fournisseur"> N° de téléphone Portable:</label>
+                <input class="form-control" name="tel_port_fournisseur" type="number" placeholder="Entrez Numéro" <?php formulaire($objetFournisseur, "tel_port_fournisseur") ?>><br />
+                <br />
+
+                <label for="tel_fixe_fournisseur"> N° de téléphone Fixe:</label>
+                <input class="form-control" name="tel_fixe_fournisseur" type="number" placeholder="Entrez Numéro" <?php formulaire($objetFournisseur, "tel_fixe_fournisseur") ?>><br />
+                <br />
+
+                <label for="id_ville"> N°Ville :</label>
+                <input class="form-control" name="id_ville" type="number" placeholder="" <?php formulaire($objetFournisseur, "id_ville") ?>><br />
+                <br />
+                <input type="submit" value="Valider" class="btn btn-light btn-lg btn-block active " role="button" aria-pressed="true">
+            </form>
+</div>
+</body>
+</html>
