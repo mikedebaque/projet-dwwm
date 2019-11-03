@@ -1,0 +1,20 @@
+class AbstractDataAccess
+{
+    protected function connexion()
+    {
+        $db = new mysqli('localhost', 'root', '', 'projet');
+        return $db;
+    }
+    protected function executerQuery($connect, $query)
+    {
+
+        $rs = mysqli_query($connect, $query);
+        return $rs;
+    }
+
+    protected function fetchResults($resultSet)
+    {
+
+        return mysqli_fetch_all($resultSet, MYSQLI_ASSOC);
+    }
+}
