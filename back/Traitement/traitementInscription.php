@@ -23,21 +23,35 @@ if((isset($_POST['nomInscription']) and !empty($_POST['nomInscription']))and
     $ville = ucfirst(strtolower($_POST['villeInscription']));
     $date = $_POST['naissanceInscription'];
     $tel = $_POST['telInscription'];
-    if(($pcw == $confirmPcw) and (filter_var($email,FILTER_VALIDATE_EMAIL)!=false))
+    $villeDAO = new villeDAO();
+    $clientDAO = new ClientDAO();
+
+    if(($clientDAO->isClientExist($email)==false) and (filter_var($email,FILTER_VALIDATE_EMAIL)!=false))
     {
-        $hashedPcw = password_hash($pcw,PASSWORD_DEFAULT);
-        $villeDAO = new villeDAO();
-        $clientDAO = new ClientDAO();
-        $isVilleExist = $villeDAO->isVilleExist($ville,$cp);
-        if($isVilleExist)
+        if(($pcw == $confirmPcw) and (filter_var($email,FILTER_VALIDATE_EMAIL)!=false))
         {
-            $clientDAO->addClient($nom,$prenom,$adresse,$email,$tel,$date,$hashedPcw,$isVilleExist);
-        }
-        else
-        {
-            $villeDAO->addVille($ville,$cp);
+            $hashedPcw = password_hash($pcw,PASSWORD_DEFAULT);
             $isVilleExist = $villeDAO->isVilleExist($ville,$cp);
-            $clientDAO->addClient($nom,$prenom,$adresse,$email,$tel,$date,$hashedPcw,$isVilleExist);
+            if($isVilleExist)
+            {
+                $clientDAO->addClient($nom,$prenom,$adresse,$email,$tel,$date,$hashedPcw,$isVilleExist);
+            }
+            else
+            {
+                $villeDAO->addVille($ville,$cp);
+                $isVilleExist = $villeDAO->isVilleExist($ville,$cp);
+                $clientDAO->addClient($nom,$prenom,$adresse,$email,$tel,$date,$hashedPcw,$isVilleExist);
+            }
         }
+    }
+    else
+    {
+        $errInscription = true;
+        echo "<div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\">
+        Cette adresse email est déjà utilisé.
+        <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">
+          <span aria-hidden=\"true\">&times;</span>
+        </button>
+      </div>";
     }
 }
