@@ -5,6 +5,9 @@
 </head>
 
 <body>
+    <?php
+    include 'back\Traitement\traitementLogin.php';
+    ?>
     <header class="sticky-top container-fluid bg-dark" style="color: white;">
         <!-- VERSION MOBILE -->
         <div class="d-block d-md-none">
@@ -109,27 +112,38 @@
         <!-- PROFIL POPOVER CONTENT -->
         <div id="profilpopover-content" style="background-color: #343a40;width: 100%;min-width: 25%;min-height: 25%;" hidden>
             <div>
-                <p>Je me connecte :</p>
-                <form action="">
-                    <div class="form-group">
-                        <input class="form-control" type="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control" type="password" name="pcw" id="" required>
-                    </div>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input">
-                        <label class="form-check-label">Se souvenir de moi</label>
-                    </div>
-                    <div class="form-group">
-                        <input class="btn btn-success" type="submit" value="Je me connecte">
-                    </div>
-                </form>
-                <hr>
-                <div>
-                    <p>Vous n'avez pas de compte ?</p>
-                    <a href="inscription.php" class="btn btn-success">Créer mon compte</a>
-                </div>
+                <?php 
+                if($_SESSION['islogged']==false)
+                {
+                    echo "<p>Je me connecte :</p>
+                    <form action=\"#\" method=\"POST\">
+                        <div class=\"form-group\">
+                            <input class=\"form-control\" type=\"email\" name=\"email\" required>
+                        </div>
+                        <div class=\"form-group\">
+                            <input class=\"form-control\" type=\"password\" name=\"pcw\" id=\"\" required>
+                        </div>
+                        <div class=\"form-check\">
+                            <input type=\"checkbox\" class=\"form-check-input\">
+                            <label class=\"form-check-label\">Se souvenir de moi</label>
+                        </div>
+                        <div class=\"form-group\">
+                            <input class=\"btn btn-success\" type=\"submit\" value=\"Je me connecte\">
+                        </div>
+                    </form>
+                    <hr>
+                    <div>
+                        <p>Vous n'avez pas de compte ?</p>
+                        <a href=\"inscription.php\" class=\"btn btn-success\">Créer mon compte</a>
+                    </div>";
+                }
+                else
+                {
+                    echo "<p>Bonjour ".$_SESSION['prenom']." ".$_SESSION['nom']."<p>";
+                    echo "<a href=\"".$_SERVER['REQUEST_URI']."?deconnexion=true"."\" class=\"btn btn-success\">Me déconnecter</a>";
+                }
+                
+                ?>
             </div>
         </div>
 

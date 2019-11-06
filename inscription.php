@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(!isset($_SESSION['islogged']))
+{
+    $_SESSION['islogged'] = false;
+}
+?>
 <!doctype html>
 <html lang="en">
 
