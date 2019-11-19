@@ -1,4 +1,4 @@
-<?php 
+<?php
 echo "
 
 <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous'>
@@ -96,13 +96,13 @@ echo "
         <div class='col-md-3 mb-md-0 mb-3'>
             <ul class='list-unstyled'>
                 <li>
-                   <img src='icon_tel.png' class='img-fluid rounded float-left' alt='Tel icon responsive' style='width:09%'><p> Numéro de téléphone</p>
+                   <img src='../medias/icon_tel.png' class='img-fluid rounded float-left' alt='Tel icon responsive' style='width:09%'><p> Numéro de téléphone</p>
                 </li>
                 <li>
-                        <img src='icon_email.png' class='img-fluid rounded float-left' alt='Email icon responsive' style='width:09%'><p> Email du drive</p>
+                        <img src='../medias/icon_email.png' class='img-fluid rounded float-left' alt='Email icon responsive' style='width:09%'><p> Email du drive</p>
                 </li>
                 <li>
-                        <img src='icon_car.png' class='img-fluid rounded float-left' alt='Address icon responsive' style='width:11%'><p>Adresse du Drive</p>
+                        <img src='../medias/icon_car.png' class='img-fluid rounded float-left' alt='Address icon responsive' style='width:11%'><p>Adresse du Drive</p>
                 </li>
             </ul>
         </div>
